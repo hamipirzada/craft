@@ -61,7 +61,7 @@ export default function DeepgramNav() {
               >
                 <Image
                   src="/nodes.png"
-                  alt="HyperCraft Logo"
+                  alt="MindSleek Logo"
                   width={56}
                   height={56}
                   className="object-contain"

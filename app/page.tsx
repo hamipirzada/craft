@@ -111,7 +111,7 @@ const features = [
 
 const testimonials = [
   {
-    quote: "HyperCraft's AI agents transformed our lead generation. We now handle 5x more inquiries without adding staff.",
+    quote: "MindSleek's AI agents transformed our lead generation. We now handle 5x more inquiries without adding staff.",
     author: "Sarah Mitchell",
     role: "VP Sales, PropTech Solutions",
     company: "Real Estate Corp",

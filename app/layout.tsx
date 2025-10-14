@@ -8,16 +8,16 @@ import StructuredData from '@/components/StructuredData'
 const inter = Inter({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700', '800', '900'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://hypercraft.in'),
+  metadataBase: new URL('https://mindsleek.in'),
   title: {
-    default: 'HyperCraft - AI & IT Solutions for Modern Businesses | Machine Learning Experts',
-    template: '%s | HyperCraft'
+    default: 'MindSleek - AI & IT Solutions for Modern Businesses | Machine Learning Experts',
+    template: '%s | MindSleek'
   },
-  description: 'Transform your business with HyperCraft\'s cutting-edge AI solutions, custom software development, and intelligent automation. Leading AI IT startup delivering innovation.',
+  description: 'Transform your business with MindSleek\'s cutting-edge AI solutions, custom software development, and intelligent automation. Leading AI IT startup delivering innovation.',
   keywords: ['AI solutions', 'machine learning', 'software development', 'IT consulting', 'automation', 'data analytics', 'cloud solutions', 'business intelligence'],
-  authors: [{ name: 'HyperCraft' }],
-  creator: 'HyperCraft',
-  publisher: 'HyperCraft',
+  authors: [{ name: 'MindSleek' }],
+  creator: 'MindSleek',
+  publisher: 'MindSleek',
   icons: {
     icon: [
       { url: '/icon' },
@@ -30,16 +30,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://hypercraft.in',
-    title: 'HyperCraft - AI & IT Solutions for Modern Businesses',
-    description: 'Transform your business with HyperCraft\'s cutting-edge AI solutions, custom software development, and intelligent automation.',
-    siteName: 'HyperCraft',
+    url: 'https://mindsleek.in',
+    title: 'MindSleek - AI & IT Solutions for Modern Businesses',
+    description: 'Transform your business with MindSleek\'s cutting-edge AI solutions, custom software development, and intelligent automation.',
+    siteName: 'MindSleek',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HyperCraft - AI & IT Solutions for Modern Businesses',
-    description: 'Transform your business with HyperCraft\'s cutting-edge AI solutions, custom software development, and intelligent automation.',
-    creator: '@hypercraft',
+    title: 'MindSleek - AI & IT Solutions for Modern Businesses',
+    description: 'Transform your business with MindSleek\'s cutting-edge AI solutions, custom software development, and intelligent automation.',
+    creator: '@mindsleek',
   },
   robots: {
     index: true,
@@ -62,30 +62,30 @@ export default function RootLayout({
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'HyperCraft',
-    url: 'https://hypercraft.in',
-    logo: 'https://hypercraft.in/logo.png',
+    name: 'MindSleek',
+    url: 'https://mindsleek.in',
+    logo: 'https://mindsleek.in/logo.png',
     description: 'Leading AI & IT solutions provider specializing in machine learning, software development, and intelligent automation.',
-    email: 'contact@hypercraft.in',
+    email: 'contact@mindsleek.in',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'IN',
     },
     sameAs: [
-      'https://linkedin.com/company/hypercraft',
-      'https://twitter.com/hypercraft',
-      'https://github.com/hypercraft',
+      'https://linkedin.com/company/mindsleek',
+      'https://twitter.com/mindsleek',
+      'https://github.com/mindsleek',
     ],
   }
 
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'HyperCraft',
-    url: 'https://hypercraft.in',
+    name: 'MindSleek',
+    url: 'https://mindsleek.in',
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://hypercraft.in/search?q={search_term_string}',
+      target: 'https://mindsleek.in/search?q={search_term_string}',
       'query-input': 'required name=search_term_string',
     },
   }
@@ -93,7 +93,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
       <head>
-        <link rel="canonical" href="https://hypercraft.in" />
+        <link rel="canonical" href="https://mindsleek.in" />
         <StructuredData data={organizationSchema} />
         <StructuredData data={websiteSchema} />
       </head>

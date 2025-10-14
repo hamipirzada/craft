@@ -3,11 +3,11 @@ import { Target, Eye, Heart, Award, Users, Lightbulb, Shield, Rocket, Phone } fr
 import AnimatedSection from '@/components/AnimatedSection'
 
 export const metadata: Metadata = {
-  title: 'About HyperCraft - Your AI Innovation Partner | Our Story & Mission',
-  description: 'Discover HyperCraft\'s journey in revolutionizing businesses through AI technology. Learn about our mission, vision, and expert team driving digital transformation.',
+  title: 'About MindSleek - Your AI Innovation Partner | Our Story & Mission',
+  description: 'Discover MindSleek\'s journey in revolutionizing businesses through AI technology. Learn about our mission, vision, and expert team driving digital transformation.',
   openGraph: {
-    title: 'About HyperCraft - Your AI Innovation Partner',
-    description: 'Discover HyperCraft\'s journey in revolutionizing businesses through AI technology.',
+    title: 'About MindSleek - Your AI Innovation Partner',
+    description: 'Discover MindSleek\'s journey in revolutionizing businesses through AI technology.',
   },
 }
 
@@ -83,7 +83,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-gray-400">
                 <p>
-                  HyperCraft was founded with a vision to democratize AI technology and make it accessible
+                  MindSleek was founded with a vision to democratize AI technology and make it accessible
                   to businesses of all sizes. We recognized that many companies struggle to harness the power
                   of artificial intelligence due to complexity and resource constraints.
                 </p>

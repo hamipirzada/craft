@@ -5,10 +5,10 @@ import AnimatedSection from '@/components/AnimatedSection'
 import ServiceCard from '@/components/ServiceCard'
 
 /* export const metadata: Metadata = {
-  title: 'AI & IT Services - Custom Solutions by HyperCraft | ML, Development & More',
-  description: 'Explore HyperCraft\'s comprehensive AI and IT services: Machine Learning, Software Development, Process Automation, Data Analytics, Cloud Solutions, and Business Intelligence.',
+  title: 'AI & IT Services - Custom Solutions by MindSleek | ML, Development & More',
+  description: 'Explore MindSleek\'s comprehensive AI and IT services: Machine Learning, Software Development, Process Automation, Data Analytics, Cloud Solutions, and Business Intelligence.',
   openGraph: {
-    title: 'AI & IT Services - Custom Solutions by HyperCraft',
+    title: 'AI & IT Services - Custom Solutions by MindSleek',
     description: 'Comprehensive AI and IT services: Machine Learning, Software Development, Process Automation, Data Analytics, Cloud Solutions, and Business Intelligence.',
   },
 } */

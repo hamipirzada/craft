@@ -4,11 +4,11 @@ import AnimatedSection from '@/components/AnimatedSection'
 import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
-  title: 'Contact HyperCraft - Get Your Free AI Consultation Today',
-  description: 'Ready to transform your business with AI? Contact HyperCraft for a free consultation. Let\'s discuss your AI and IT solution needs.',
+  title: 'Contact MindSleek - Get Your Free AI Consultation Today',
+  description: 'Ready to transform your business with AI? Contact MindSleek for a free consultation. Let\'s discuss your AI and IT solution needs.',
   openGraph: {
-    title: 'Contact HyperCraft - Get Your Free AI Consultation',
-    description: 'Ready to transform your business with AI? Contact HyperCraft for a free consultation.',
+    title: 'Contact MindSleek - Get Your Free AI Consultation',
+    description: 'Ready to transform your business with AI? Contact MindSleek for a free consultation.',
   },
 }
 
@@ -16,8 +16,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email Us',
-    content: 'contact@hypercraft.in',
-    link: 'mailto:contact@hypercraft.in'
+    content: 'contact@mindsleek.in',
+    link: 'mailto:contact@mindsleek.in'
   },
   {
     icon: Phone,
