@@ -1,0 +1,328 @@
+/* Import Deepgram fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply transition-colors duration-200;
+  }
+
+  body {
+    @apply bg-deepgram-dark text-deepgram-text-secondary font-sans antialiased;
+    background-image:
+      radial-gradient(ellipse at top left, rgba(20, 154, 251, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at top right, rgba(19, 239, 149, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom, rgba(20, 154, 251, 0.05) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  /* Custom scrollbar - Deepgram style */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-deepgram-dark-darker;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-deepgram-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-deepgram-border-light;
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-deepgram-accent-blue/30 text-deepgram-text-primary;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-deepgram-text-primary font-display font-bold;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    @apply text-5xl md:text-7xl;
+  }
+
+  h2 {
+    @apply text-4xl md:text-6xl;
+  }
+
+  h3 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h4 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  p {
+    @apply text-deepgram-text-muted leading-relaxed;
+  }
+}
+
+@layer components {
+  /* Container */
+  .container-deepgram {
+    @apply max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Glass Effect - Deepgram Style */
+  .glass-deepgram {
+    @apply bg-deepgram-dark-lighter/50 backdrop-blur-xl border border-deepgram-border;
+  }
+
+  .glass-deepgram-strong {
+    @apply bg-deepgram-dark-lighter/80 backdrop-blur-2xl border border-deepgram-border-light;
+  }
+
+  /* Gradient Text - Deepgram Style */
+  .text-gradient-deepgram {
+    @apply bg-deepgram-gradient bg-clip-text text-transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 15s ease infinite;
+  }
+
+  /* Buttons - Deepgram Style */
+  .btn-primary-deepgram {
+    @apply px-6 py-3 rounded-lg font-semibold text-white bg-deepgram-gradient hover:bg-deepgram-gradient-hover transition-all duration-300 shadow-deepgram hover:shadow-deepgram-hover hover:-translate-y-0.5;
+    background-size: 200% 200%;
+  }
+
+  .btn-secondary-deepgram {
+    @apply px-6 py-3 rounded-lg font-semibold text-deepgram-text-primary border-2 border-deepgram-border hover:border-deepgram-accent-teal hover:bg-deepgram-accent-teal/10 transition-all duration-300;
+  }
+
+  .btn-ghost-deepgram {
+    @apply px-6 py-3 rounded-lg font-semibold text-deepgram-text-secondary hover:text-deepgram-text-primary hover:bg-deepgram-dark-lighter transition-all duration-300;
+  }
+
+  /* Card - Deepgram Style */
+  .card-deepgram {
+    @apply bg-deepgram-dark-lighter border border-deepgram-border rounded-2xl p-6 transition-all duration-300;
+  }
+
+  .card-deepgram:hover {
+    @apply shadow-deepgram-hover border-deepgram-border-light -translate-y-1;
+  }
+
+  .card-deepgram-feature {
+    @apply card-deepgram p-8;
+  }
+
+  .card-deepgram-feature:hover {
+    @apply shadow-deepgram-glow;
+  }
+
+  /* Input - Deepgram Style */
+  .input-deepgram {
+    @apply w-full px-4 py-3 bg-deepgram-dark-lighter border border-deepgram-border rounded-lg text-deepgram-text-primary placeholder-deepgram-text-muted focus:outline-none focus:border-deepgram-accent-blue focus:ring-1 focus:ring-deepgram-accent-blue transition-all duration-200;
+  }
+
+  .textarea-deepgram {
+    @apply input-deepgram min-h-[120px] resize-none;
+  }
+
+  /* Badge */
+  .badge-deepgram {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-deepgram-dark-lighter border border-deepgram-border text-deepgram-text-secondary;
+  }
+
+  /* Gradient Border - Deepgram Style */
+  .gradient-border-deepgram {
+    position: relative;
+    background: linear-gradient(90deg, #149AFB, #13EF95);
+    padding: 2px;
+    border-radius: 16px;
+  }
+
+  .gradient-border-content {
+    @apply bg-deepgram-dark-lighter rounded-[14px] w-full h-full;
+  }
+
+  /* Hero Section Styles */
+  .hero-deepgram {
+    @apply relative min-h-screen flex items-center justify-center overflow-hidden;
+    background: radial-gradient(ellipse at center top, rgba(20, 154, 251, 0.15), transparent 50%);
+  }
+
+  /* Starry Background */
+  .starry-background {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.3), transparent),
+      radial-gradient(2px 2px at 60px 70px, rgba(255, 255, 255, 0.3), transparent),
+      radial-gradient(1px 1px at 50px 50px, rgba(255, 255, 255, 0.3), transparent),
+      radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.3), transparent),
+      radial-gradient(2px 2px at 90px 10px, rgba(255, 255, 255, 0.3), transparent);
+    background-size: 200px 200px;
+    background-repeat: repeat;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  /* Glow Effect */
+  .glow-deepgram {
+    position: relative;
+  }
+
+  .glow-deepgram::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(circle, rgba(20, 154, 251, 0.2), transparent 70%);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .glow-deepgram:hover::before {
+    opacity: 1;
+  }
+
+  /* Grid Pattern */
+  .grid-deepgram {
+    background-image:
+      linear-gradient(rgba(44, 44, 51, 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(44, 44, 51, 0.5) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Code Block */
+  .code-block-deepgram {
+    @apply bg-deepgram-dark-darker border border-deepgram-border rounded-lg p-4 font-mono text-sm text-deepgram-text-secondary overflow-x-auto;
+  }
+
+  /* Link Styles */
+  .link-deepgram {
+    @apply text-deepgram-text-muted hover:text-deepgram-accent-teal transition-colors duration-200 underline-offset-4 hover:underline;
+  }
+
+  /* Section Padding */
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  /* Loading Spinner */
+  .spinner-deepgram {
+    @apply border-4 border-deepgram-border border-t-deepgram-accent-blue rounded-full w-8 h-8 animate-spin;
+  }
+}
+
+@layer utilities {
+  /* Text Utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Hover Lift Effect */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  /* Hover Lift Strong */
+  .hover-lift-strong {
+    @apply transition-transform duration-300 hover:-translate-y-2;
+  }
+
+  /* Fade In Animation */
+  .animate-on-scroll {
+    @apply opacity-0 translate-y-8 transition-all duration-700;
+  }
+
+  .animate-on-scroll.visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* Gradient Animation */
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 15s ease infinite;
+  }
+
+  /* Perspective */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  /* Transform 3D */
+  .transform-3d {
+    transform-style: preserve-3d;
+  }
+
+  /* Backdrop Blur Custom */
+  .backdrop-blur-deepgram {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* Text Shadow */
+  .text-shadow-deepgram {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Smooth Scroll */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+
+  /* Hide Scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
