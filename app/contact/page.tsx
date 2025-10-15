@@ -1,16 +1,28 @@
-import type { Metadata } from 'next'
+'use client'
+
 import { Mail, Phone, MapPin, Clock, MessageCircle, HelpCircle } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
 import ContactForm from '@/components/ContactForm'
+import dynamic from 'next/dynamic'
 
-export const metadata: Metadata = {
+const Scene3D = dynamic(() => import('@/components/3d/Scene3D'), {
+  ssr: false,
+  loading: () => null
+})
+
+const Card3D = dynamic(() => import('@/components/3d/Card3D'), {
+  ssr: false,
+  loading: () => <div className="card-deepgram p-6 animate-pulse h-full" />
+})
+
+/* export const metadata: Metadata = {
   title: 'Contact MindSleek - Get Your Free AI Consultation Today',
   description: 'Ready to transform your business with AI? Contact MindSleek for a free consultation. Let\'s discuss your AI and IT solution needs.',
   openGraph: {
     title: 'Contact MindSleek - Get Your Free AI Consultation',
     description: 'Ready to transform your business with AI? Contact MindSleek for a free consultation.',
   },
-}
+} */
 
 const contactInfo = [
   {
@@ -65,6 +77,9 @@ const faqs = [
 export default function ContactPage() {
   return (
     <div className="pt-20">
+      {/* 3D Background */}
+      <Scene3D enableParticles enableShapes />
+
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-dark-800 to-dark-900" />
@@ -88,18 +103,15 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
-              <AnimatedSection key={index} delay={index * 0.1}>
-                <a
-                  href={info.link}
-                  className="glass-effect rounded-xl p-6 hover:bg-white/10 transition-all duration-300 block group"
-                >
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-accent-purple rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <info.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">{info.title}</h3>
-                  <p className="text-gray-400">{info.content}</p>
-                </a>
-              </AnimatedSection>
+              <a key={index} href={info.link}>
+                <Card3D
+                  icon={info.icon}
+                  title={info.title}
+                  description={info.content}
+                  delay={index * 0.1}
+                  gradient="from-deepgram-accent-blue to-deepgram-accent-teal"
+                />
+              </a>
             ))}
           </div>
         </div>

@@ -1,15 +1,27 @@
-import type { Metadata } from 'next'
+'use client'
+
 import { Target, Eye, Heart, Award, Users, Lightbulb, Shield, Rocket, Phone } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
+import dynamic from 'next/dynamic'
 
-export const metadata: Metadata = {
+const Scene3D = dynamic(() => import('@/components/3d/Scene3D'), {
+  ssr: false,
+  loading: () => null
+})
+
+const Card3D = dynamic(() => import('@/components/3d/Card3D'), {
+  ssr: false,
+  loading: () => <div className="card-deepgram p-6 animate-pulse h-full" />
+})
+
+/* export const metadata: Metadata = {
   title: 'About MindSleek - Your AI Innovation Partner | Our Story & Mission',
   description: 'Discover MindSleek\'s journey in revolutionizing businesses through AI technology. Learn about our mission, vision, and expert team driving digital transformation.',
   openGraph: {
     title: 'About MindSleek - Your AI Innovation Partner',
     description: 'Discover MindSleek\'s journey in revolutionizing businesses through AI technology.',
   },
-}
+} */
 
 const values = [
   {
@@ -53,6 +65,9 @@ const technologies = [
 export default function AboutPage() {
   return (
     <div className="pt-20">
+      {/* 3D Background */}
+      <Scene3D enableParticles enableShapes />
+
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-dark-800 to-dark-900" />
@@ -157,15 +172,14 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {values.map((value, index) => (
-              <AnimatedSection key={index} delay={index * 0.1}>
-                <div className="glass-effect rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-accent-purple rounded-lg flex items-center justify-center mb-4">
-                    <value.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{value.title}</h3>
-                  <p className="text-gray-400">{value.description}</p>
-                </div>
-              </AnimatedSection>
+              <Card3D
+                key={index}
+                icon={value.icon}
+                title={value.title}
+                description={value.description}
+                delay={index * 0.1}
+                gradient="from-deepgram-accent-blue to-deepgram-accent-teal"
+              />
             ))}
           </div>
         </div>
@@ -209,21 +223,25 @@ export default function AboutPage() {
               Our diverse team of AI specialists, software engineers, and data scientists brings decades
               of combined experience in delivering transformative technology solutions.
             </p>
-            <div className="glass-effect rounded-2xl p-12 max-w-4xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div>
-                  <h3 className="text-3xl font-bold text-gradient mb-2">15+</h3>
-                  <p className="text-gray-400">Team Members</p>
-                </div>
-                <div>
-                  <h3 className="text-3xl font-bold text-gradient mb-2">10+</h3>
-                  <p className="text-gray-400">Years Experience</p>
-                </div>
-                <div>
-                  <h3 className="text-3xl font-bold text-gradient mb-2">5+</h3>
-                  <p className="text-gray-400">Countries Served</p>
-                </div>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <Card3D
+                value="15+"
+                title="Team Members"
+                delay={0}
+                gradient="from-deepgram-accent-blue to-deepgram-accent-teal"
+              />
+              <Card3D
+                value="10+"
+                title="Years Experience"
+                delay={0.1}
+                gradient="from-deepgram-accent-teal to-deepgram-accent-cyan"
+              />
+              <Card3D
+                value="5+"
+                title="Countries Served"
+                delay={0.2}
+                gradient="from-deepgram-accent-cyan to-deepgram-accent-blue"
+              />
             </div>
           </AnimatedSection>
         </div>

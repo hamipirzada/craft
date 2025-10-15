@@ -1,8 +1,24 @@
 'use client'
 
-import { MessageSquare, TrendingUp, Eye, Brain, BarChart, FileText, ShoppingCart, Users, Phone } from 'lucide-react'
+import { MessageSquare, TrendingUp, Eye, Brain, BarChart, FileText, ShoppingCart, Users, Phone, Smartphone, Server, Heart, GraduationCap, Building, Factory, ArrowRight } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
-// import SolutionCard from '@/components/SolutionCard'
+import dynamic from 'next/dynamic'
+
+// Lazy load 3D components
+const Scene3D = dynamic(() => import('@/components/3d/Scene3D'), {
+  ssr: false,
+  loading: () => null
+})
+
+const FeatureCard3D = dynamic(() => import('@/components/3d/FeatureCard3D'), {
+  ssr: false,
+  loading: () => <div className="card-deepgram p-6 animate-pulse h-full" />
+})
+
+const Button3D = dynamic(() => import('@/components/3d/Button3D'), {
+  ssr: false,
+  loading: () => <div className="btn-primary animate-pulse" />
+})
 
 /* export const metadata: Metadata = {
   title: 'AI-Powered Solutions - Intelligent Chatbots, Predictive Analytics & Computer Vision',
@@ -15,46 +31,151 @@ import AnimatedSection from '@/components/AnimatedSection'
 
 const mainSolutions = [
   {
-    icon: Phone,
-    title: 'AI Lead Calling Agents',
-    description: 'Revolutionary AI-powered calling system that qualifies leads, books appointments, and nurtures prospects 24/7 with human-like conversations that convert.',
+    icon: ShoppingCart,
+    title: 'E-Commerce Platforms',
+    description: 'Complete e-commerce solutions with payment gateways, inventory management, and customer engagement tools.',
     features: [
-      'Natural voice conversations with advanced NLP',
-      'Intelligent lead scoring and qualification',
-      'Automated appointment scheduling and follow-ups',
-      'Real-time call transcription and analytics',
-      'CRM integration and data synchronization',
-      'Multi-language support and local accents'
+      'Custom storefront design',
+      'Payment gateway integration',
+      'Inventory management system',
+      'Order tracking and fulfillment',
+      'Customer analytics',
+      'Mobile-responsive design'
     ],
     useCases: [
-      'Real estate lead qualification',
-      'Healthcare appointment booking',
-      'Insurance quote generation',
-      'E-commerce customer outreach',
-      'B2B sales prospecting'
+      'Online retail stores',
+      'Marketplace platforms',
+      'Subscription services',
+      'B2B e-commerce',
+      'Digital product delivery'
     ],
-    gradient: 'bg-gradient-to-br from-accent-neon to-futuristic-cyan'
+    gradient: 'from-green-500 to-emerald-700'
   },
   {
-    icon: MessageSquare,
-    title: 'Intelligent Chatbots & Virtual Assistants',
-    description: 'AI-powered conversational agents that provide 24/7 customer support, handle inquiries, and enhance user engagement across multiple channels.',
+    icon: Heart,
+    title: 'Healthcare IT Solutions',
+    description: 'HIPAA-compliant healthcare management systems, telemedicine platforms, and patient engagement solutions.',
     features: [
-      'Natural language understanding (NLU)',
-      'Multi-channel deployment (Web, Mobile, WhatsApp, Slack)',
-      'Sentiment analysis and emotion detection',
-      'Contextual conversation management',
-      'Seamless human handoff',
-      'Analytics and performance insights'
+      'Electronic health records (EHR)',
+      'Telemedicine integration',
+      'Patient portal development',
+      'Appointment scheduling',
+      'HIPAA compliance',
+      'Medical billing systems'
+    ],
+    useCases: [
+      'Hospital management systems',
+      'Clinic management software',
+      'Telehealth platforms',
+      'Patient engagement apps',
+      'Medical practice management'
+    ],
+    gradient: 'from-red-500 to-pink-700'
+  },
+  {
+    icon: Building,
+    title: 'FinTech Solutions',
+    description: 'Secure financial platforms, payment processing, blockchain integration, and banking applications.',
+    features: [
+      'Secure payment processing',
+      'Blockchain integration',
+      'Digital wallet development',
+      'Regulatory compliance',
+      'Fraud detection systems',
+      'Real-time transactions'
+    ],
+    useCases: [
+      'Digital banking apps',
+      'Payment gateways',
+      'Cryptocurrency platforms',
+      'Lending platforms',
+      'Insurance tech solutions'
+    ],
+    gradient: 'from-blue-500 to-indigo-700'
+  },
+  {
+    icon: GraduationCap,
+    title: 'EdTech Platforms',
+    description: 'Learning management systems, virtual classrooms, and educational content delivery platforms.',
+    features: [
+      'Learning management system (LMS)',
+      'Virtual classroom integration',
+      'Content management',
+      'Student progress tracking',
+      'Interactive assessments',
+      'Video conferencing'
+    ],
+    useCases: [
+      'Online course platforms',
+      'School management systems',
+      'Corporate training portals',
+      'E-learning marketplaces',
+      'Student information systems'
+    ],
+    gradient: 'from-purple-500 to-purple-700'
+  },
+  {
+    icon: Server,
+    title: 'Enterprise Software',
+    description: 'Custom enterprise resource planning, customer relationship management, and business automation tools.',
+    features: [
+      'ERP system development',
+      'CRM customization',
+      'Workflow automation',
+      'Business intelligence',
+      'Data integration',
+      'API development'
+    ],
+    useCases: [
+      'Custom ERP systems',
+      'CRM platforms',
+      'Supply chain management',
+      'HR management systems',
+      'Project management tools'
+    ],
+    gradient: 'from-gray-600 to-gray-800'
+  },
+  {
+    icon: Brain,
+    title: 'AI & Machine Learning Solutions',
+    description: 'Custom AI applications including chatbots, voice agents, predictive analytics, and intelligent automation.',
+    features: [
+      'AI chatbots & voice agents',
+      'Predictive analytics',
+      'Computer vision applications',
+      'Natural language processing',
+      'Recommendation engines',
+      'Anomaly detection'
     ],
     useCases: [
       'Customer support automation',
-      'Lead qualification and nurturing',
-      'E-commerce product recommendations',
-      'FAQ automation',
-      'Appointment scheduling'
+      'AI-powered lead calling',
+      'Fraud detection systems',
+      'Personalization engines',
+      'Intelligent document processing'
     ],
-    gradient: 'bg-gradient-to-br from-primary-500 to-primary-700'
+    gradient: 'from-cyan-500 to-blue-700'
+  },
+  {
+    icon: Factory,
+    title: 'Manufacturing & IoT',
+    description: 'Smart factory solutions, IoT integration, predictive maintenance, and industrial automation systems.',
+    features: [
+      'IoT device integration',
+      'Real-time monitoring',
+      'Predictive maintenance',
+      'Quality control automation',
+      'Supply chain visibility',
+      'Data analytics'
+    ],
+    useCases: [
+      'Smart factory systems',
+      'Asset tracking',
+      'Preventive maintenance',
+      'Production optimization',
+      'Quality assurance'
+    ],
+    gradient: 'from-orange-500 to-red-700'
   },
   {
     icon: TrendingUp,
@@ -75,7 +196,7 @@ const mainSolutions = [
       'Supply chain optimization',
       'Marketing campaign optimization'
     ],
-    gradient: 'bg-gradient-to-br from-accent-purple to-purple-700'
+    gradient: 'from-accent-purple to-purple-700'
   },
   {
     icon: Eye,
@@ -96,7 +217,7 @@ const mainSolutions = [
       'Retail shelf monitoring',
       'Automated document processing'
     ],
-    gradient: 'bg-gradient-to-br from-accent-cyan to-blue-700'
+    gradient: 'from-accent-cyan to-blue-700'
   },
   {
     icon: Brain,
@@ -117,7 +238,7 @@ const mainSolutions = [
       'Content moderation',
       'Knowledge extraction'
     ],
-    gradient: 'bg-gradient-to-br from-accent-pink to-pink-700'
+    gradient: 'from-accent-pink to-pink-700'
   },
   {
     icon: BarChart,
@@ -138,7 +259,7 @@ const mainSolutions = [
       'Operational efficiency monitoring',
       'Financial reporting'
     ],
-    gradient: 'bg-gradient-to-br from-green-500 to-green-700'
+    gradient: 'from-green-500 to-green-700'
   },
   {
     icon: FileText,
@@ -159,7 +280,7 @@ const mainSolutions = [
       'HR document management',
       'Legal document review'
     ],
-    gradient: 'bg-gradient-to-br from-orange-500 to-orange-700'
+    gradient: 'from-orange-500 to-orange-700'
   },
   {
     icon: ShoppingCart,
@@ -180,7 +301,7 @@ const mainSolutions = [
       'Size and fit recommendations',
       'Cross-sell and upsell strategies'
     ],
-    gradient: 'bg-gradient-to-br from-indigo-500 to-indigo-700'
+    gradient: 'from-indigo-500 to-indigo-700'
   },
   {
     icon: Users,
@@ -201,13 +322,16 @@ const mainSolutions = [
       'Personalized customer experiences',
       'Market basket analysis'
     ],
-    gradient: 'bg-gradient-to-br from-teal-500 to-teal-700'
+    gradient: 'from-teal-500 to-teal-700'
   },
 ]
 
 export default function SolutionsPage() {
   return (
     <div className="pt-20">
+      {/* 3D Background */}
+      <Scene3D enableParticles enableShapes />
+
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-dark-800 to-dark-900" />
@@ -217,10 +341,10 @@ export default function SolutionsPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              AI-Powered <span className="text-gradient">Solutions</span>
+              Industry-Specific <span className="text-gradient">Solutions</span>
             </h1>
             <p className="text-xl text-gray-400">
-              Transform your business with intelligent solutions designed to solve real-world challenges
+              Tailored technology solutions for every industry—from e-commerce to healthcare, fintech to education
             </p>
           </AnimatedSection>
         </div>
@@ -229,55 +353,26 @@ export default function SolutionsPage() {
       {/* Solutions Grid */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-32">
+          <AnimatedSection className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Explore Our <span className="text-gradient">Solutions</span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Industry-specific solutions tailored to your unique business needs
+            </p>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {mainSolutions.map((solution, index) => (
-              <AnimatedSection key={index}>
-                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-start ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-                  <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                    <div className={`w-16 h-16 ${solution.gradient} rounded-xl flex items-center justify-center mb-6`}>
-                      <solution.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <h2 className="text-4xl font-bold mb-4">{solution.title}</h2>
-                    <p className="text-xl text-gray-400 mb-8">{solution.description}</p>
-
-                    <div className="mb-8">
-                      <h3 className="text-xl font-semibold mb-4 text-white">Key Features:</h3>
-                      <ul className="space-y-2">
-                        {solution.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start">
-                            <span className="text-primary-400 mr-2 mt-1">✓</span>
-                            <span className="text-gray-300">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-semibold mb-4 text-white">Use Cases:</h3>
-                      <div className="flex flex-wrap gap-2">
-                        {solution.useCases.map((useCase, idx) => (
-                          <span
-                            key={idx}
-                            className="px-3 py-1 glass-effect rounded-full text-sm text-gray-300"
-                          >
-                            {useCase}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                    <div className={`${solution.gradient} rounded-2xl p-1`}>
-                      <div className="glass-effect rounded-xl p-8 bg-dark-900">
-                        <div className="aspect-square bg-gradient-to-br from-dark-800 to-dark-900 rounded-xl flex items-center justify-center">
-                          <solution.icon className="w-32 h-32 text-white/20" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </AnimatedSection>
+              <FeatureCard3D
+                key={index}
+                icon={solution.icon}
+                title={solution.title}
+                description={solution.description}
+                features={solution.features}
+                delay={index * 0.05}
+                gradient={solution.gradient}
+              />
             ))}
           </div>
         </div>
@@ -289,18 +384,27 @@ export default function SolutionsPage() {
           <AnimatedSection>
             <div className="glass-effect rounded-3xl p-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Ready to Implement AI Solutions?
+                Ready to Transform Your Industry?
               </h2>
               <p className="text-xl text-gray-400 mb-8">
-                Let's discuss which solution is right for your business needs
+                Let's discuss how our solutions can solve your unique business challenges
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/contact" className="btn-primary text-lg px-8 py-4">
-                  Schedule Consultation
-                </a>
-                <a href="/services" className="btn-secondary text-lg px-8 py-4">
-                  View Services
-                </a>
+                <Button3D
+                  icon={ArrowRight}
+                  variant="primary"
+                  href="/contact"
+                  className="text-lg px-8 py-4"
+                >
+                  Get Free Consultation
+                </Button3D>
+                <Button3D
+                  variant="secondary"
+                  href="/services"
+                  className="text-lg px-8 py-4"
+                >
+                  Explore Services
+                </Button3D>
               </div>
             </div>
           </AnimatedSection>
