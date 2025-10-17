@@ -39,7 +39,7 @@ export default function Navigation() {
               <Sparkles className="w-6 h-6 text-white" />
             </div>
             <span className="text-xl md:text-2xl font-bold text-gradient">
-              MindSleek
+              MetaCodr
             </span>
           </Link>
 

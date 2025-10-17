@@ -15,11 +15,11 @@ const Card3D = dynamic(() => import('@/components/3d/Card3D'), {
 })
 
 /* export const metadata: Metadata = {
-  title: 'About MindSleek - Your AI Innovation Partner | Our Story & Mission',
-  description: 'Discover MindSleek\'s journey in revolutionizing businesses through AI technology. Learn about our mission, vision, and expert team driving digital transformation.',
+  title: 'About MetaCodr - Your AI Innovation Partner | Our Story & Mission',
+  description: 'Discover MetaCodr\'s journey in revolutionizing businesses through AI technology. Learn about our mission, vision, and expert team driving digital transformation.',
   openGraph: {
-    title: 'About MindSleek - Your AI Innovation Partner',
-    description: 'Discover MindSleek\'s journey in revolutionizing businesses through AI technology.',
+    title: 'About MetaCodr - Your AI Innovation Partner',
+    description: 'Discover MetaCodr\'s journey in revolutionizing businesses through AI technology.',
   },
 } */
 
@@ -98,7 +98,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-gray-400">
                 <p>
-                  MindSleek was founded with a vision to democratize AI technology and make it accessible
+                  MetaCodr was founded with a vision to democratize AI technology and make it accessible
                   to businesses of all sizes. We recognized that many companies struggle to harness the power
                   of artificial intelligence due to complexity and resource constraints.
                 </p>

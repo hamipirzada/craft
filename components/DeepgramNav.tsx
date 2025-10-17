@@ -55,18 +55,17 @@ export default function DeepgramNav() {
             {/* Logo */}
             <Link href="/" className="flex items-center group z-50">
               <motion.div
-                whileHover={{ rotate: 360, scale: 1.1 }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="relative"
               >
                 <Image
-                  src="/nodes.png"
-                  alt="MindSleek Logo"
-                  width={56}
-                  height={56}
+                  src="/name.jpeg"
+                  alt="MetaCodr Logo"
+                  width={140}
+                  height={40}
                   className="object-contain"
                   style={{
-                    filter: 'drop-shadow(0 0 12px rgba(20, 154, 251, 0.8)) drop-shadow(0 0 24px rgba(19, 239, 149, 0.4))',
                     width: 'auto',
                     height: 'auto'
                   }}

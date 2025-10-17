@@ -36,22 +36,16 @@ export default function DeepgramFooter() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12 mb-12">
           {/* Brand Column - Takes 2 cols on large screens */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center space-x-3 mb-6 group">
-              <div className="relative w-10 h-10 group-hover:rotate-180 transition-transform duration-500">
+            <Link href="/" className="flex items-center mb-6 group">
+              <div className="relative h-12 w-auto">
                 <Image
-                  src="/nodes.png"
-                  alt="MindSleek Logo"
-                  width={40}
-                  height={40}
-                  className="object-contain"
-                  style={{
-                    filter: 'drop-shadow(0 0 8px rgba(20, 154, 251, 0.6))'
-                  }}
+                  src="/name.jpeg"
+                  alt="MetaCodr Logo"
+                  width={180}
+                  height={48}
+                  className="object-contain group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <span className="text-2xl font-bold text-deepgram-text-primary font-display tracking-tight">
-                Mind<span className="bg-gradient-to-r from-deepgram-accent-teal via-deepgram-accent-blue to-deepgram-accent-purple bg-clip-text text-transparent">Sleek</span>
-              </span>
             </Link>
             <p className="text-deepgram-text-muted mb-6 leading-relaxed max-w-md">
               Empowering businesses to scale, innovate, and thrive with future-ready AI & IT solutions. Based in Srinagar, serving globally.
@@ -60,7 +54,7 @@ export default function DeepgramFooter() {
             {/* Social Icons */}
             <div className="flex space-x-4">
               <a
-                href="https://linkedin.com/company/mindsleek"
+                href="https://linkedin.com/company/metacodr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 text-deepgram-text-muted hover:text-deepgram-accent-teal hover:bg-deepgram-dark-lighter rounded-lg transition-all duration-200"
@@ -68,7 +62,7 @@ export default function DeepgramFooter() {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="https://twitter.com/mindsleek"
+                href="https://twitter.com/metacodr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 text-deepgram-text-muted hover:text-deepgram-accent-teal hover:bg-deepgram-dark-lighter rounded-lg transition-all duration-200"
@@ -76,7 +70,7 @@ export default function DeepgramFooter() {
                 <Twitter className="w-5 h-5" />
               </a>
               <a
-                href="https://github.com/mindsleek"
+                href="https://github.com/metacodr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 text-deepgram-text-muted hover:text-deepgram-accent-teal hover:bg-deepgram-dark-lighter rounded-lg transition-all duration-200"
@@ -147,10 +141,10 @@ export default function DeepgramFooter() {
               <li className="flex items-start space-x-2 text-deepgram-text-muted group">
                 <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 group-hover:text-deepgram-accent-teal transition-colors" />
                 <a
-                  href="mailto:contact@mindsleek.in"
+                  href="mailto:contact@metacodr.com"
                   className="hover:text-deepgram-accent-teal transition-colors text-sm"
                 >
-                  contact@mindsleek.in
+                  contact@metacodr.com
                 </a>
               </li>
               <li className="flex items-start space-x-2 text-deepgram-text-muted group">
@@ -174,7 +168,7 @@ export default function DeepgramFooter() {
         <div className="pt-8 border-t border-deepgram-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-deepgram-text-muted text-sm">
-              &copy; {new Date().getFullYear()} MindSleek. All rights reserved. | Founded 2023
+              &copy; {new Date().getFullYear()} MetaCodr. All rights reserved. | Founded 2023
             </p>
             <div className="flex flex-wrap justify-center gap-6">
               {footerLinks.legal.map((link) => (

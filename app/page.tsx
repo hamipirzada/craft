@@ -132,7 +132,7 @@ const features = [
 
 const testimonials = [
   {
-    quote: "MindSleek delivered our e-commerce platform on time and under budget. Their expertise in Next.js and cloud infrastructure was exceptional.",
+    quote: "MetaCodr delivered our e-commerce platform on time and under budget. Their expertise in Next.js and cloud infrastructure was exceptional.",
     author: "Sarah Mitchell",
     role: "CTO",
     company: "TechCorp",

@@ -67,7 +67,7 @@ export default function LiquidNav() {
               >
                 <Image
                   src="/nodes.png"
-                  alt="MindSleek Logo"
+                  alt="MetaCodr Logo"
                   width={48}
                   height={48}
                   className="object-contain drop-shadow-[0_0_8px_rgba(22,189,202,0.6)]"
@@ -75,7 +75,7 @@ export default function LiquidNav() {
                 />
               </motion.div>
               <span className="text-2xl font-display font-bold bg-gradient-to-r from-[#16BDCA] via-[#0EA5E9] to-[#16BDCA] bg-clip-text text-transparent">
-                MindSleek
+                MetaCodr
               </span>
             </Link>
 

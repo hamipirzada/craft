@@ -26,10 +26,10 @@ const Button3D = dynamic(() => import('@/components/3d/Button3D'), {
 })
 
 /* export const metadata: Metadata = {
-  title: 'AI & IT Services - Custom Solutions by MindSleek | ML, Development & More',
-  description: 'Explore MindSleek\'s comprehensive AI and IT services: Machine Learning, Software Development, Process Automation, Data Analytics, Cloud Solutions, and Business Intelligence.',
+  title: 'AI & IT Services - Custom Solutions by MetaCodr | ML, Development & More',
+  description: 'Explore MetaCodr\'s comprehensive AI and IT services: Machine Learning, Software Development, Process Automation, Data Analytics, Cloud Solutions, and Business Intelligence.',
   openGraph: {
-    title: 'AI & IT Services - Custom Solutions by MindSleek',
+    title: 'AI & IT Services - Custom Solutions by MetaCodr',
     description: 'Comprehensive AI and IT services: Machine Learning, Software Development, Process Automation, Data Analytics, Cloud Solutions, and Business Intelligence.',
   },
 } */

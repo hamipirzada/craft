@@ -16,11 +16,11 @@ const Card3D = dynamic(() => import('@/components/3d/Card3D'), {
 })
 
 /* export const metadata: Metadata = {
-  title: 'Contact MindSleek - Get Your Free AI Consultation Today',
-  description: 'Ready to transform your business with AI? Contact MindSleek for a free consultation. Let\'s discuss your AI and IT solution needs.',
+  title: 'Contact MetaCodr - Get Your Free AI Consultation Today',
+  description: 'Ready to transform your business with AI? Contact MetaCodr for a free consultation. Let\'s discuss your AI and IT solution needs.',
   openGraph: {
-    title: 'Contact MindSleek - Get Your Free AI Consultation',
-    description: 'Ready to transform your business with AI? Contact MindSleek for a free consultation.',
+    title: 'Contact MetaCodr - Get Your Free AI Consultation',
+    description: 'Ready to transform your business with AI? Contact MetaCodr for a free consultation.',
   },
 } */
 
@@ -28,8 +28,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email Us',
-    content: 'contact@mindsleek.in',
-    link: 'mailto:contact@mindsleek.in'
+    content: 'contact@metacodr.com',
+    link: 'mailto:contact@metacodr.com'
   },
   {
     icon: Phone,

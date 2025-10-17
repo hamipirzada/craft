@@ -22,7 +22,7 @@ const Button3D = dynamic(() => import('@/components/3d/Button3D'), {
 
 /* export const metadata: Metadata = {
   title: 'AI-Powered Solutions - Intelligent Chatbots, Predictive Analytics & Computer Vision',
-  description: 'Innovative AI solutions from MindSleek: Intelligent chatbots, predictive analytics, computer vision, NLP, and custom machine learning models for your business.',
+  description: 'Innovative AI solutions from MetaCodr: Intelligent chatbots, predictive analytics, computer vision, NLP, and custom machine learning models for your business.',
   openGraph: {
     title: 'AI-Powered Solutions - Intelligent Chatbots, Predictive Analytics & Computer Vision',
     description: 'Innovative AI solutions: Intelligent chatbots, predictive analytics, computer vision, NLP, and custom machine learning models.',
