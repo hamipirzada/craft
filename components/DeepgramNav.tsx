@@ -60,15 +60,11 @@ export default function DeepgramNav() {
                 className="relative"
               >
                 <Image
-                  src="/name.jpeg"
+                  src="/name.png"
                   alt="MetaCodr Logo"
-                  width={140}
-                  height={40}
-                  className="object-contain"
-                  style={{
-                    width: 'auto',
-                    height: 'auto'
-                  }}
+                  width={700}
+                  height={175}
+                  className="h-24 md:h-28 w-auto object-contain"
                   priority
                 />
               </motion.div>

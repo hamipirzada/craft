@@ -1,6 +1,7 @@
 'use client'
 
-import { Mail, Phone, MapPin, Clock, MessageCircle, HelpCircle } from 'lucide-react'
+import { useState } from 'react'
+import { Mail, Phone, MapPin, Clock, MessageCircle, HelpCircle, ChevronDown } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
 import ContactForm from '@/components/ContactForm'
 import dynamic from 'next/dynamic'
@@ -34,13 +35,13 @@ const contactInfo = [
   {
     icon: Phone,
     title: 'Call Us',
-    content: '+91-XXXXXXXXXX',
-    link: 'tel:+91XXXXXXXXXX'
+    content: '+91 9622415387',
+    link: 'tel:+919622415387'
   },
   {
     icon: MapPin,
     title: 'Visit Us',
-    content: 'India',
+    content: 'Model Town-D, Sopore, Kashmir',
     link: '#'
   },
   {
@@ -75,6 +76,12 @@ const faqs = [
 ]
 
 export default function ContactPage() {
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null)
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index)
+  }
+
   return (
     <div className="pt-20">
       {/* 3D Background */}
@@ -190,12 +197,28 @@ export default function ContactPage() {
             </p>
           </AnimatedSection>
 
-          <div className="space-y-6">
+          <div className="space-y-4">
             {faqs.map((faq, index) => (
               <AnimatedSection key={index} delay={index * 0.1}>
-                <div className="glass-effect rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
-                  <h3 className="text-xl font-semibold text-white mb-3">{faq.question}</h3>
-                  <p className="text-gray-400">{faq.answer}</p>
+                <div className="glass-effect rounded-xl overflow-hidden transition-all duration-300">
+                  <button
+                    onClick={() => toggleFaq(index)}
+                    className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                  >
+                    <h3 className="text-lg font-semibold text-white pr-4">{faq.question}</h3>
+                    <ChevronDown
+                      className={`w-5 h-5 text-primary-400 flex-shrink-0 transition-transform duration-300 ${
+                        openFaqIndex === index ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${
+                      openFaqIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <p className="px-6 pb-5 text-gray-400">{faq.answer}</p>
+                  </div>
                 </div>
               </AnimatedSection>
             ))}
@@ -203,16 +226,35 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Section (Placeholder) */}
+      {/* Map Section */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
+          <AnimatedSection className="text-center mb-12">
+            <div className="flex items-center justify-center space-x-3 mb-4">
+              <MapPin className="w-8 h-8 text-primary-400" />
+              <h2 className="text-4xl font-bold">
+                Find <span className="text-gradient">Us</span>
+              </h2>
+            </div>
+            <p className="text-xl text-gray-400">
+              Visit our office in Model Town-D, Sopore, Kashmir
+            </p>
+          </AnimatedSection>
+          <AnimatedSection delay={0.2}>
             <div className="glass-effect rounded-2xl p-2">
-              <div className="bg-dark-800 rounded-xl h-96 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-16 h-16 text-primary-400 mx-auto mb-4" />
-                  <p className="text-gray-400">Map integration coming soon</p>
-                </div>
+              <div className="rounded-xl overflow-hidden h-96 md:h-[500px] relative">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3307.234567890!2d74.442811!3d34.305306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzTCsDE4JzE5LjEiTiA3NMKwMjYnMzQuMSJF!5e0!3m2!1sen!2sin!4v1234567890"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%)' }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full"
+                  title="MetaCodr Office Location - Model Town-D, Sopore, Kashmir"
+                />
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-deepgram-accent-teal/5 to-deepgram-accent-blue/5 mix-blend-overlay"></div>
               </div>
             </div>
           </AnimatedSection>

@@ -78,7 +78,7 @@ export default function Scene3D({
   cameraPosition = [0, 0, 10]
 }: Scene3DProps) {
   return (
-    <div className="fixed inset-0 -z-10 pointer-events-none">
+    <div className="fixed inset-0 -z-10 pointer-events-none" style={{ filter: 'blur(1.5px)', opacity: 0.6 }}>
       <Canvas
         dpr={[1, 2]}
         performance={{ min: 0.5 }}

@@ -61,7 +61,7 @@ export default function Card3D({
       transition={{ duration: 0.6, delay }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`relative ${className}`}
+      className={`relative h-full ${className}`}
       style={{
         transformStyle: 'preserve-3d',
         perspective: '1000px',
@@ -73,7 +73,7 @@ export default function Card3D({
           rotateY,
         }}
         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-        className="card-deepgram hover-lift p-6 relative overflow-hidden"
+        className="card-deepgram hover-lift p-6 relative overflow-hidden h-full flex flex-col"
         style={{
           transformStyle: 'preserve-3d',
         }}
@@ -85,7 +85,7 @@ export default function Card3D({
         />
 
         {/* Content */}
-        <div style={{ transform: 'translateZ(50px)' }} className="relative z-10">
+        <div style={{ transform: 'translateZ(50px)' }} className="relative z-10 flex-1 flex flex-col">
           {Icon && (
             <motion.div
               animate={{ rotateZ: rotateY * 0.5 }}
@@ -106,7 +106,7 @@ export default function Card3D({
           </h3>
 
           {description && (
-            <p className="text-sm text-deepgram-text-muted">{description}</p>
+            <p className="text-sm text-deepgram-text-muted flex-1">{description}</p>
           )}
 
           {children}

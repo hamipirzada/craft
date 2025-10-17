@@ -131,16 +131,16 @@ export default function ContactForm() {
         <select
           id="service"
           {...register('service', { required: 'Please select a service' })}
-          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-white"
+          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-white [&>option]:bg-deepgram-dark-darker [&>option]:text-white"
         >
-          <option value="">Select a service</option>
-          <option value="ai-solutions">AI Solutions</option>
-          <option value="software-development">Software Development</option>
-          <option value="process-automation">Process Automation</option>
-          <option value="data-analytics">Data Analytics</option>
-          <option value="cloud-solutions">Cloud Solutions</option>
-          <option value="business-intelligence">Business Intelligence</option>
-          <option value="other">Other</option>
+          <option value="" className="bg-deepgram-dark-darker text-white">Select a service</option>
+          <option value="ai-solutions" className="bg-deepgram-dark-darker text-white">AI Solutions</option>
+          <option value="software-development" className="bg-deepgram-dark-darker text-white">Software Development</option>
+          <option value="process-automation" className="bg-deepgram-dark-darker text-white">Process Automation</option>
+          <option value="data-analytics" className="bg-deepgram-dark-darker text-white">Data Analytics</option>
+          <option value="cloud-solutions" className="bg-deepgram-dark-darker text-white">Cloud Solutions</option>
+          <option value="business-intelligence" className="bg-deepgram-dark-darker text-white">Business Intelligence</option>
+          <option value="other" className="bg-deepgram-dark-darker text-white">Other</option>
         </select>
         {errors.service && <p className="mt-1 text-sm text-red-400">{errors.service.message}</p>}
       </div>

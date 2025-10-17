@@ -15,16 +15,9 @@ const footerLinks = {
     { label: 'Cloud Solutions', href: '/services#cloud' },
     { label: 'Data Analytics', href: '/services#analytics' },
   ],
-  resources: [
-    { label: 'Documentation', href: '#docs' },
-    { label: 'Blog', href: '#blog' },
-    { label: 'Case Studies', href: '#cases' },
-    { label: 'Support', href: '#support' },
-  ],
   legal: [
     { label: 'Privacy Policy', href: '/privacy' },
     { label: 'Terms of Service', href: '/terms' },
-    { label: 'Cookie Policy', href: '#cookies' },
   ],
 }
 
@@ -33,17 +26,17 @@ export default function DeepgramFooter() {
     <footer className="bg-deepgram-dark-darker border-t border-deepgram-border">
       <div className="container-deepgram py-12 md:py-16 lg:py-20">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
           {/* Brand Column - Takes 2 cols on large screens */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center mb-6 group">
-              <div className="relative h-12 w-auto">
+              <div className="transition-opacity duration-300 group-hover:opacity-80">
                 <Image
-                  src="/name.jpeg"
+                  src="/name.png"
                   alt="MetaCodr Logo"
-                  width={180}
-                  height={48}
-                  className="object-contain group-hover:scale-105 transition-transform duration-300"
+                  width={750}
+                  height={188}
+                  className="h-24 md:h-28 w-auto object-contain"
                 />
               </div>
             </Link>
@@ -114,26 +107,6 @@ export default function DeepgramFooter() {
             </ul>
           </div>
 
-          {/* Resources Links */}
-          <div>
-            <h3 className="text-deepgram-text-primary font-semibold mb-4">Resources</h3>
-            <ul className="space-y-3">
-              {footerLinks.resources.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-deepgram-text-muted hover:text-deepgram-accent-teal transition-colors duration-200 text-sm inline-flex items-center group"
-                  >
-                    {link.label}
-                    {link.href === '#' && (
-                      <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    )}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Contact Info */}
           <div>
             <h3 className="text-deepgram-text-primary font-semibold mb-4">Contact</h3>
@@ -158,7 +131,7 @@ export default function DeepgramFooter() {
               </li>
               <li className="flex items-start space-x-2 text-deepgram-text-muted">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-deepgram-accent-teal" />
-                <span className="text-sm">Srinagar, J&K, India</span>
+                <span className="text-sm">Model Town-D, Sopore, Kashmir</span>
               </li>
             </ul>
           </div>
