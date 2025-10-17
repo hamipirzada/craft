@@ -6,4 +6,4 @@ Allow: /
 Disallow: /api/
 
 # Sitemap location
-Sitemap: https://hypercraft.in/sitemap.xml
+Sitemap: https://metacodr.com/sitemap.xml
